@@ -31,4 +31,24 @@ console.log(typeof film.budjet);
 
 // task 5
 let isAdult = confirm("Do you reach the age of majority?");
-console.log(isAdult);               
+console.log(isAdult);
+
+// task 6
+let firstName;
+let lastName;
+let studyGroup;
+let yearOfBirth;
+firstName = "Top"
+lastName = 'Secret'
+studyGroup = "JS for TA 2023"
+yearOfBirth = 2000;
+let maritalStatus = false;
+typeOfFirstName = typeof firstName;
+typeOfLastName = typeof lastName;
+typeOfStudyGroup = typeof studyGroup;
+typeOfYearOfBirth = typeof yearOfBirth;
+typeOfMaritalStatus = typeof maritalStatus;
+console.log(typeOfYearOfBirth, typeOfMaritalStatus, typeOfFirstName, typeOfLastName, typeOfStudyGroup);
+badHabits = null;
+drivingLicence = undefined;
+console.log(typeof badHabits, typeof drivingLicence)
