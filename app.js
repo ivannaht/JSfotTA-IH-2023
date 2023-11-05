@@ -52,3 +52,11 @@ console.log(typeOfYearOfBirth, typeOfMaritalStatus, typeOfFirstName, typeOfLastN
 badHabits = null;
 drivingLicence = undefined;
 console.log(typeof badHabits, typeof drivingLicence)
+
+// task 7
+username = prompt("Please enter your username", "username");
+email = prompt("Please enter your email address", "email");
+password = prompt("Please enter your password", "password");
+welcomeMessage = `Dear ${username}, your email is ${email}, your password is ${password}.`;
+document.write("<h1>welcome!</h1>");
+document.write(welcomeMessage);
