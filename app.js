@@ -60,3 +60,19 @@ password = prompt("Please enter your password", "password");
 welcomeMessage = `Dear ${username}, your email is ${email}, your password is ${password}.`;
 document.write("<h1>welcome!</h1>");
 document.write(welcomeMessage);
+
+// task 8
+let secondsInMinute = 60;
+let minutesInHour = 60;
+let hoursInDay = 24;
+let daysInMonth = 30.5;
+let secondsInHour;
+let secondsInDay;
+let secondsInMonth;
+secondsInHour = secondsInMinute * minutesInHour;
+secondsInDay = secondsInHour * hoursInDay;
+secondsInMonth = secondsInDay * daysInMonth;
+document.write("<h1>seconds calculation</h1>");
+document.write("<p>",`An hour equals ${secondsInHour} seconds`, "</p>");
+document.write("<p>",`A day equals ${secondsInDay} seconds`, "</p>");
+document.write("<p>",`A month equals ${secondsInMonth} seconds`, "</p>");
