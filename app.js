@@ -29,4 +29,6 @@ console.log(typeof film.isInteresting);
 console.log(typeof film.actors);
 console.log(typeof film.budjet);
 
-               
+// task 5
+let isAdult = confirm("Do you reach the age of majority?");
+console.log(isAdult);               
