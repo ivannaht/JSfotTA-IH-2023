@@ -62,10 +62,10 @@ document.write("<h1>welcome!</h1>");
 document.write(welcomeMessage);
 
 // task 8
-let secondsInMinute = 60;
-let minutesInHour = 60;
-let hoursInDay = 24;
-let daysInMonth = 30.5;
+const secondsInMinute = 60;
+const minutesInHour = 60;
+const hoursInDay = 24;
+const daysInMonth = 30.5;
 let secondsInHour;
 let secondsInDay;
 let secondsInMonth;
