@@ -191,12 +191,41 @@ if (arrayTriangle.length === 3) {
     console.log("This is right-angled triangle");
         } else if (triangleArea === 0.5 * a * c){
     console.log("This is right-angled triangle");
-    } else if (triangleArea === 0.5 * b * c){
+        } else if (triangleArea === 0.5 * b * c){
 console.log("This is right-angled triangle");
-    } else {
+        } else {
     console.log("This triangle is not right-angled")
-    }
+     }
 } else {
     console.log(`You entered ${arrayTriangle}. Incorrect data`);
 }
 
+// task 2.7
+const today = new Date();
+const currentTime = today.getHours();
+
+// Switch statement
+switch(true) {
+    case (currentTime > 5 && currentTime <= 11):
+        alert("Good morning!"); 
+        break;
+    case (currentTime > 11 && currentTime <= 17):
+        alert("Good day!"); 
+        break;
+    case (currentTime > 17 && currentTime <= 23):
+        alert("Good evening!"); 
+        break;
+    default:
+        alert("Good night!")
+}
+
+// if statement
+if (currentTime > 5 && currentTime <= 11) {
+    alert("Good morning!"); 
+} else if (currentTime > 11 && currentTime <= 17) {
+    alert("Good day!"); 
+} else if (currentTime > 17 && currentTime <= 23) {
+    alert("Good evening!"); 
+} else {
+    alert("Good night!")
+}
