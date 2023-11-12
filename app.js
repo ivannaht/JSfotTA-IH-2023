@@ -115,7 +115,7 @@ let inputNumber;
 
 inputNumber = prompt("Please enter a number");
 
-if (String(typeof inputNumber) !== "number") {
+if (inputNumber === null || inputNumber === true || inputNumber === false || inputNumber === "" || isNaN(inputNumber)) {
     console.log(`You entered ${inputNumber}. It is not a number. It is ${typeof inputNumber}`);
 } else if (inputNumber % 2 == 0 && inputNumber > 0) {
     console.log(`You entered ${inputNumber}. This number is even and positive`);
@@ -150,3 +150,10 @@ const cities = [" Rome ", " Lviv ", " Warsaw "];
 let cities_str;
 cities_str = cities.join("*");
 console.log(cities_str);
+
+// task 2.5 used variable is Adult from task 1.5
+if (isAdult) {
+    alert("You have reached the age of majority");
+} else {
+alert("You are still too young");
+}
