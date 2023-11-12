@@ -144,3 +144,9 @@ document.write("<p>",`The fifth element is ${arrayFirst[4]}`,"</p>");
 
 arrayFirst.shift();
 document.write("<p>",`Updated array is [ ${arrayFirst} ]`,"</p>");
+
+// task 2.4
+const cities = [" Rome ", " Lviv ", " Warsaw "];
+let cities_str;
+cities_str = cities.join("*");
+console.log(cities_str);
