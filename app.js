@@ -156,7 +156,7 @@ console.log(cities_str);
 if (isAdult) {
     alert("You have reached the age of majority");
 } else {
-alert("You are still too young");
+    alert("You are still too young");
 }
 
 // task 2.6
@@ -193,7 +193,7 @@ if (arrayTriangle.length === 3) {
         } else if (triangleArea === 0.5 * a * c){
     console.log("This is right-angled triangle");
         } else if (triangleArea === 0.5 * b * c){
-console.log("This is right-angled triangle");
+    console.log("This is right-angled triangle");
         } else {
     console.log("This triangle is not right-angled");
      }
