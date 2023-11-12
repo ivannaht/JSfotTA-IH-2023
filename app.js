@@ -157,3 +157,46 @@ if (isAdult) {
 } else {
 alert("You are still too young");
 }
+
+// task 2.6
+const arrayTriangle = [];
+let inputSide;
+let s = 0;
+
+for (let i = 0; i < 3; i++) {
+inputSide = prompt(`Please enter the length of the ${i + 1} side of the triangle`)
+    if (inputSide === null || inputSide === true || inputSide === false || inputSide === "" || isNaN(inputNumber)) {
+         console.log(`You entered ${inputSide}. Incorrect data`);
+    } else {
+        arrayTriangle.push(inputSide);
+        s += arrayTriangle[i] * 0.5;        
+    }
+}
+
+// Heron's formula
+let a = parseFloat(arrayTriangle[0]);
+let b = parseFloat(arrayTriangle[1]);
+let c = parseFloat(arrayTriangle[2]);
+let triangleArea;
+
+if (arrayTriangle.length === 3) {
+triangleArea = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+console.log(`The area of triagle is ${triangleArea.toFixed(3)}`);
+} else {
+    console.log(`You entered ${arrayTriangle}. Incorrect data`);
+}
+
+if (arrayTriangle.length === 3) {
+    if (triangleArea === 0.5 * a * b){
+    console.log("This is right-angled triangle");
+        } else if (triangleArea === 0.5 * a * c){
+    console.log("This is right-angled triangle");
+    } else if (triangleArea === 0.5 * b * c){
+console.log("This is right-angled triangle");
+    } else {
+    console.log("This triangle is not right-angled")
+    }
+} else {
+    console.log(`You entered ${arrayTriangle}. Incorrect data`);
+}
+
