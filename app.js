@@ -117,8 +117,10 @@ inputNumber = prompt("Please enter a number");
 
 if (inputNumber === null || inputNumber === true || inputNumber === false || inputNumber === "" || isNaN(inputNumber)) {
     console.log(`You entered ${inputNumber}. It is not a number. It is ${typeof inputNumber}`);
+} else if (inputNumber % 2 == 0 && inputNumber % 7 == 0) {
+    console.log(`You entered ${inputNumber}. This number is a multiple of 2 and 7`);
 } else if (inputNumber % 2 == 0 && inputNumber > 0) {
-    console.log(`You entered ${inputNumber}. This number is even and positive`);
+    console.log(`You entered ${inputNumber}. This number is even and positive.`);
 } else if (inputNumber % 7 == 0) {
     console.log(`You entered ${inputNumber}. This number is a multiple of 7.`);
 } else {
@@ -131,7 +133,6 @@ arrayFirst[0] = 12345;
 arrayFirst[1] = "Any line";
 arrayFirst[2] = true;
 arrayFirst[3] = null;
-
 
 document.write("<h1>arrays</h1>");
 document.write("<p>",`The newly created array has ${arrayFirst.length} elements`,"</p>");
@@ -164,7 +165,7 @@ let inputSide;
 let s = 0;
 
 for (let i = 0; i < 3; i++) {
-inputSide = prompt(`Please enter the length of the ${i + 1} side of the triangle`)
+inputSide = prompt(`Please enter the length of the ${i + 1} side of the triangle`);
     if (inputSide === null || inputSide === true || inputSide === false || inputSide === "" || isNaN(inputNumber)) {
          console.log(`You entered ${inputSide}. Incorrect data`);
     } else {
@@ -194,7 +195,7 @@ if (arrayTriangle.length === 3) {
         } else if (triangleArea === 0.5 * b * c){
 console.log("This is right-angled triangle");
         } else {
-    console.log("This triangle is not right-angled")
+    console.log("This triangle is not right-angled");
      }
 } else {
     console.log(`You entered ${arrayTriangle}. Incorrect data`);
@@ -216,7 +217,7 @@ switch(true) {
         alert("Good evening!"); 
         break;
     default:
-        alert("Good night!")
+        alert("Good night!");
 }
 
 // if statement
@@ -227,5 +228,5 @@ if (currentTime > 5 && currentTime <= 11) {
 } else if (currentTime > 17 && currentTime <= 23) {
     alert("Good evening!"); 
 } else {
-    alert("Good night!")
+    alert("Good night!");
 }
