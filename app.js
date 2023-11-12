@@ -115,12 +115,32 @@ let inputNumber;
 
 inputNumber = prompt("Please enter a number");
 
-if (isNaN(inputNumber)) {
-    console.log(`You entered ${inputNumber}. It is not a number`);
+if (String(typeof inputNumber) !== "number") {
+    console.log(`You entered ${inputNumber}. It is not a number. It is ${typeof inputNumber}`);
 } else if (inputNumber % 2 == 0 && inputNumber > 0) {
     console.log(`You entered ${inputNumber}. This number is even and positive`);
 } else if (inputNumber % 7 == 0) {
-    console.log(`You entered ${inputNumber}. This number is a multiple of 7`);
+    console.log(`You entered ${inputNumber}. This number is a multiple of 7.`);
 } else {
     console.log(`You entered ${inputNumber}. This number is incorrect`);
 }
+
+// task 2.3
+const arrayFirst = [];
+arrayFirst[0] = 12345;
+arrayFirst[1] = "Any line";
+arrayFirst[2] = true;
+arrayFirst[3] = null;
+
+
+document.write("<h1>arrays</h1>");
+document.write("<p>",`The newly created array has ${arrayFirst.length} elements`,"</p>");
+
+let inputElement;
+inputElement = prompt("Please enter any value");
+
+arrayFirst.push(inputElement);
+document.write("<p>",`The fifth element is ${arrayFirst[4]}`,"</p>");
+
+arrayFirst.shift();
+document.write("<p>",`Updated array is [ ${arrayFirst} ]`,"</p>");
