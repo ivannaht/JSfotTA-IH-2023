@@ -1,3 +1,6 @@
+// Home Work 1
+console.log("Home Work 1");
+
 // task 1.2
 console.log("Hontaryk");
 
@@ -83,3 +86,26 @@ document.write("<h1>seconds calculation</h1>");
 document.write("<p>",`An hour equals ${secondsInHour} seconds`, "</p>");
 document.write("<p>",`A day equals ${secondsInDay} seconds`, "</p>");
 document.write("<p>",`A month equals ${secondsInMonth} seconds`, "</p>");
+
+// Home Work 2
+console.log("Home Work 2");
+
+// task 2.1
+let x = 1;
+let y = 2;
+
+let res1 = String(x) + String(y);
+console.log(res1);
+console.log(typeof res1);
+
+let res2 = Boolean(x) + String(y);
+console.log(res2);
+console.log(typeof res2);
+
+let res3 = Boolean(x + y);
+console.log(res3);
+console.log(typeof res3);
+
+let res4 = parseInt(x === y);
+console.log(res4);
+console.log(typeof res4);
