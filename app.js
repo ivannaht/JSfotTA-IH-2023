@@ -117,11 +117,11 @@ inputNumber = prompt("Please enter a number");
 
 if (inputNumber === null || inputNumber === true || inputNumber === false || inputNumber === "" || isNaN(inputNumber)) {
     console.log(`You entered ${inputNumber}. It is not a number. It is ${typeof inputNumber}`);
-} else if (inputNumber % 2 == 0 && inputNumber % 7 == 0) {
-    console.log(`You entered ${inputNumber}. This number is a multiple of 2 and 7`);
-} else if (inputNumber % 2 == 0 && inputNumber > 0) {
+} else if (inputNumber % 2 === 0 && inputNumber % 7 === 0 && inputNumber > 0) {
+    console.log(`You entered ${inputNumber}. This number is even and a multiple of 7 and positive`);
+} else if (inputNumber % 2 === 0 && inputNumber > 0) {
     console.log(`You entered ${inputNumber}. This number is even and positive.`);
-} else if (inputNumber % 7 == 0) {
+} else if (inputNumber % 7 === 0) {
     console.log(`You entered ${inputNumber}. This number is a multiple of 7.`);
 } else {
     console.log(`You entered ${inputNumber}. This number is incorrect`);
