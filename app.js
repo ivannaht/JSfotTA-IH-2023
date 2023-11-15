@@ -237,7 +237,7 @@ console.log("Home Work 3");
 // task 3.1
 const arrayOfNumbers = [2, 3, 4, 5];
 
-function arrayProductFor(arrayOfNumbers) {
+function calcProductFor(arrayOfNumbers) {
     let product = 1;
     for (let num of arrayOfNumbers) {
         product *= num;    
@@ -245,9 +245,9 @@ function arrayProductFor(arrayOfNumbers) {
     return product;
 }
 
-console.log(`The product of the elements of this array is ${arrayProductFor(arrayOfNumbers)}. Here was used "for" loop`);
+console.log(`The product of the elements of this array is ${calcProductFor(arrayOfNumbers)}. Here was used "for" loop`);
 
-function arrayProductWhile(arrayOfNumbers) {
+function calcProductWhile(arrayOfNumbers) {
     let i = 0;
     let product = 1 ;
     while (i < arrayOfNumbers.length) {
@@ -257,7 +257,7 @@ function arrayProductWhile(arrayOfNumbers) {
     return product;
 }
 
-console.log(`The product of the elements of this array is ${arrayProductWhile(arrayOfNumbers)}. Here was used "while" loop`);
+console.log(`The product of the elements of this array is ${calcProductWhile(arrayOfNumbers)}. Here was used "while" loop`);
 
 // task 3.2
 document.write("<h1>check whether the number is even or odd</h1>");
@@ -269,3 +269,15 @@ for (let i = 0; i <= 15; i++) {
         document.write("<p>",`${i} is odd`,"</p>");
     }
 }
+
+// task 3.3
+function createRandArray(k) {
+let randArray = [];
+    for( let i = 0; i <= k; i++) {
+    randomInteger = Math.floor(Math.random() * 500) + 1;
+    randArray.push(randomInteger);
+    }
+    return randArray;
+}
+
+console.log(createRandArray(5));
