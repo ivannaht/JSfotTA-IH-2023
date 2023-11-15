@@ -230,3 +230,31 @@ if (currentTime > 5 && currentTime <= 11) {
 } else {
     alert("Good night!");
 }
+
+// Home Work 3
+console.log("Home Work 3");
+
+// task 3.1
+const arrayOfNumbers = [2, 3, 4, 5];
+
+function arrayProductFor(arrayOfNumbers) {
+    let product = 1;
+    for (let num of arrayOfNumbers) {
+        product *= num;    
+    };
+    return product;
+}
+
+console.log(`The product of the elements of this array is ${arrayProductFor(arrayOfNumbers)}. Here was used "for" loop`);
+
+function arrayProductWhile(arrayOfNumbers) {
+    let i = 0;
+    let product = 1 ;
+    while (i < arrayOfNumbers.length) {
+        product *= arrayOfNumbers[i];
+        i++;    
+    };
+    return product;
+}
+
+console.log(`The product of the elements of this array is ${arrayProductWhile(arrayOfNumbers)}. Here was used "while" loop`);
