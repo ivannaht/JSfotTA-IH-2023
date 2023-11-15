@@ -241,7 +241,7 @@ function arrayProductFor(arrayOfNumbers) {
     let product = 1;
     for (let num of arrayOfNumbers) {
         product *= num;    
-    };
+    }
     return product;
 }
 
@@ -253,8 +253,19 @@ function arrayProductWhile(arrayOfNumbers) {
     while (i < arrayOfNumbers.length) {
         product *= arrayOfNumbers[i];
         i++;    
-    };
+    }
     return product;
 }
 
 console.log(`The product of the elements of this array is ${arrayProductWhile(arrayOfNumbers)}. Here was used "while" loop`);
+
+// task 3.2
+document.write("<h1>check whether the number is even or odd</h1>");
+
+for (let i = 0; i <= 15; i++) {
+    if (i % 2 === 0) {
+        document.write("<p>",`${i} is even`,"</p>");
+    } else {
+        document.write("<p>",`${i} is odd`,"</p>");
+    }
+}
