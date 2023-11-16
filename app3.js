@@ -40,7 +40,7 @@ for (let i = 0; i <= 15; i++) {
 // task 3.3
 function createRandArray(k) {
 let randArray = [];
-    for( let i = 0; i <= k; i++) {
+    for (let i = 0; i <= k; i++) {
     randomInteger = Math.floor(Math.random() * 500) + 1;
     randArray.push(randomInteger);
     }
@@ -50,7 +50,6 @@ let randArray = [];
 console.log(createRandArray(5));
 
 // task 3.4
-
 raiseToDegree();
 
 function raiseToDegree() {
@@ -68,14 +67,13 @@ function raiseToDegree() {
         a = inputNumber.value;
         b = inputPower.value;
         result = a ** b;
-        message = `${a} in power ${b} is equal ${result}`;
+        message = `${a} in power ${b} is equal to ${result}`;
         console.log(message);
         return message
     });
 }
 
 // task 3.5
-
 let inputValues1 = prompt("Please enter several integer numbers delimited by comma");
 const inputArray1 = inputValues1.split(',');
 function findMin(...inputArray1) {
@@ -84,7 +82,6 @@ function findMin(...inputArray1) {
 console.log(`The minimal number in array [${inputArray1}] is ${findMin(...inputArray1)}`);
 
 // task 3.6
-
 let inputValues2 = prompt("Please enter several integer numbers delimited by comma");
 const inputArray2 = inputValues2.split(',');
 function findUnique(...inputArray2) {
@@ -94,7 +91,6 @@ function findUnique(...inputArray2) {
 console.log(`All numbers in array [${inputArray2}] are unique? ${findUnique(...inputArray2)}`);
 
 // task 3.7
-
 let inputValues3 = prompt("Please enter several integer numbers delimited by comma");
 let xx = prompt("Please enter the number of last elements to extract");
 const inputArray3 = inputValues3.split(',');
