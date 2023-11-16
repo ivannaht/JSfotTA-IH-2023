@@ -231,53 +231,17 @@ if (currentTime > 5 && currentTime <= 11) {
     alert("Good night!");
 }
 
-// Home Work 3
-console.log("Home Work 3");
 
-// task 3.1
-const arrayOfNumbers = [2, 3, 4, 5];
 
-function calcProductFor(arrayOfNumbers) {
-    let product = 1;
-    for (let num of arrayOfNumbers) {
-        product *= num;    
-    }
-    return product;
+// task 3.4 is in a separate file app34.js
+
+// task 3.5
+
+let inputValues = prompt("Please enter several integer number delimited by comma");
+const inputArray = inputValues.split(',');
+function findMin(...inputArray) {
+    return Math.min(...arguments);
 }
-
-console.log(`The product of the elements of this array is ${calcProductFor(arrayOfNumbers)}. Here was used "for" loop`);
-
-function calcProductWhile(arrayOfNumbers) {
-    let i = 0;
-    let product = 1 ;
-    while (i < arrayOfNumbers.length) {
-        product *= arrayOfNumbers[i];
-        i++;    
-    }
-    return product;
-}
-
-console.log(`The product of the elements of this array is ${calcProductWhile(arrayOfNumbers)}. Here was used "while" loop`);
-
-// task 3.2
-document.write("<h1>check whether the number is even or odd</h1>");
-
-for (let i = 0; i <= 15; i++) {
-    if (i % 2 === 0) {
-        document.write("<p>",`${i} is even`,"</p>");
-    } else {
-        document.write("<p>",`${i} is odd`,"</p>");
-    }
-}
-
-// task 3.3
-function createRandArray(k) {
-let randArray = [];
-    for( let i = 0; i <= k; i++) {
-    randomInteger = Math.floor(Math.random() * 500) + 1;
-    randArray.push(randomInteger);
-    }
-    return randArray;
-}
-
-console.log(createRandArray(5));
+console.log(inputValues);
+console.log(inputArray);
+console.log(findMin(...inputArray));
