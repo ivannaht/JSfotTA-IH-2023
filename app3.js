@@ -102,3 +102,12 @@ function returnLastElements(inputArray3, x = 1) {
     return inputArray3.slice(-x, inputArray3.length);
 };
 console.log(`The last ${x} elements in [${inputArray3}] are ${returnLastElements(inputArray3, x)}`);
+
+// task 3.8
+let inputString = prompt("Please enter any sentence");
+function convertFirstLetter(inputString) {
+    const arrayOfString = inputString.split(" ");
+    let newString = arrayOfString.map(word => word[0].toUpperCase() + word.slice(1)).join(" ");
+    return newString;    
+}
+console.log(`Old sentence: ${inputString}, New sentence: ${convertFirstLetter(inputString)}`)
