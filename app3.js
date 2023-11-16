@@ -96,12 +96,12 @@ console.log(`All numbers in array [${inputArray2}] are unique? ${findUnique(...i
 // task 3.7
 
 let inputValues3 = prompt("Please enter several integer numbers delimited by comma");
-let x = prompt("Please enter the number of last elements to extract");
+let xx = prompt("Please enter the number of last elements to extract");
 const inputArray3 = inputValues3.split(',');
-function returnLastElements(inputArray3, x = 1) {
-    return inputArray3.slice(-x, inputArray3.length);
+function returnLastElements(inputArray3, xx = 1) {
+    return inputArray3.slice(-xx, inputArray3.length);
 };
-console.log(`The last ${x} elements in [${inputArray3}] are ${returnLastElements(inputArray3, x)}`);
+console.log(`The last ${xx} elements in [${inputArray3}] are ${returnLastElements(inputArray3, xx)}`);
 
 // task 3.8
 let inputString = prompt("Please enter any sentence");
