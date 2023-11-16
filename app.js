@@ -230,18 +230,3 @@ if (currentTime > 5 && currentTime <= 11) {
 } else {
     alert("Good night!");
 }
-
-
-
-// task 3.4 is in a separate file app34.js
-
-// task 3.5
-
-let inputValues = prompt("Please enter several integer number delimited by comma");
-const inputArray = inputValues.split(',');
-function findMin(...inputArray) {
-    return Math.min(...arguments);
-}
-console.log(inputValues);
-console.log(inputArray);
-console.log(findMin(...inputArray));
