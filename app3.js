@@ -57,8 +57,8 @@ function raiseToDegree() {
     let inputPower;
     let a;
     let b;
-    let result;
-    let message;
+    var result;
+    var message;
     let inputForm = document.getElementById("inputForm");
     inputForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -67,16 +67,16 @@ function raiseToDegree() {
         a = inputNumber.value;
         b = inputPower.value;
         result = a ** b;
+        document.getElementById("result").value = result;
         message = `${a} in power ${b} is equal to ${result}`;
         console.log(message);
-        return message
     });
 }
 
 // task 3.5
 let inputValues1 = prompt("Please enter several integer numbers delimited by comma");
 const inputArray1 = inputValues1.split(',');
-function findMin(...inputArray1) {
+function findMin() {
     return Math.min(...arguments);
 }
 console.log(`The minimal number in array [${inputArray1}] is ${findMin(...inputArray1)}`);
