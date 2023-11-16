@@ -92,3 +92,13 @@ function findUnique(...inputArray2) {
     return JSON.stringify(uniqueArray) === JSON.stringify(inputArray2);
 }
 console.log(`All numbers in array [${inputArray2}] are unique? ${findUnique(...inputArray2)}`);
+
+// task 3.7
+
+let inputValues3 = prompt("Please enter several integer numbers delimited by comma");
+let x = prompt("Please enter the number of last elements to extract");
+const inputArray3 = inputValues3.split(',');
+function returnLastElements(inputArray3, x = 1) {
+    return inputArray3.slice(-x, inputArray3.length);
+};
+console.log(`The last ${x} elements in [${inputArray3}] are ${returnLastElements(inputArray3, x)}`);
