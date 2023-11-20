@@ -22,3 +22,25 @@ console.log(result);
     console.log("Function calcRectangleArea was run");
 }
 
+//task 4.2
+function checkAge() {
+    let userAge = prompt("Please enter your age");
+    console.log(`age = ${userAge}`);
+    if (userAge === "" )  {
+        throw new Error ("The field is empty! Please enter your age");
+    } else if (isNaN(userAge)) {
+        throw new Error ("Non-numeric value was entered! Please enter your age as a number"); 
+    } else if (userAge < 14) {
+        throw new Error ("You are not permitted to watch the movie due to insufficient age");      
+    }
+    alert("Your age is fine. You get access to watching the movie!");
+}
+try {
+    checkAge();
+    } catch (e) {
+        console.error(`${e.name}: ${e.message}`);
+        alert(e.message);
+    } finally {
+        console.log("Function checkAge was run");
+    }
+    
