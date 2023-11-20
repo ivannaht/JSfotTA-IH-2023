@@ -33,7 +33,7 @@ function checkAge() {
     } else if (userAge < 14) {
         throw new Error("You are not permitted to watch the movie due to insufficient age");      
     }
-    alert("Your age is fine. You get access to watching the movie!");
+    alert("Your age is fine. You get access to watch the movie!");
 }
 try {
     checkAge();
@@ -53,13 +53,12 @@ class MonthException extends Error {
   }
 
 const month = +prompt("Please enter the month as a number");
-console.log(month);
+console.log(`month: ${month}`);
  
-
 function showMonthName(month) {
     var months = ["January","February","March","April","May","June","July",
     "August","September","October","November","December"];
-    if (month <= 0 || month > 12)  {
+    if (month <= 0 || month > 12) {
         throw new MonthException("Incorrect month number");
     }
     return months[month - 1];
@@ -69,10 +68,46 @@ try {
     } catch (e) {
         console.error(`${e.name}: ${e.message}`);
         console.log(`${e.name} ${e.message}`);
-
     } finally {
         console.log("Function showMonthName was run");
     }
 
     console.log(showMonthName(month));
-    
+
+//task 4.4
+const ids = [];
+let negativeId;
+
+class User {
+    constructor(id) {
+    this.id = id;
+    }
+}
+
+function showUser(id) {
+    if (id < 0) {
+        negativeId = id;
+        throw new Error("ID must not be negative");                 
+    } else {
+        let newUser = new User(id);
+        return newUser;  
+    }
+}
+
+function showUsers(ids) {
+    var result = [];
+        ids.forEach((id) => { 
+            try {
+                currentUser = showUser(id);
+                result.push(currentUser);
+            } catch (e) {
+                console.error(`${e.name}: ${e.message}`);
+                console.log(`${e.name}: ${e.message}: ${negativeId}`);
+            } finally {
+                console.log("Function showUsers was run");
+            }                
+        });
+        return result;     
+}
+
+console.log(showUsers([7,-12,44,22]));
