@@ -52,27 +52,29 @@ class MonthException extends Error {
     }
   }
 
-const month = +prompt("Please enter the month as a number");
+let month = +prompt("Please enter the month as a number");
 console.log(`month: ${month}`);
  
 function showMonthName(month) {
     var months = ["January","February","March","April","May","June","July",
-    "August","September","October","November","December"];
-    if (month <= 0 || month > 12) {
-        throw new MonthException("Incorrect month number");
+    "August","September","October","November","December"];  
+    try {    
+    if (month > 0 && month <= 12 && Number.isInteger(month)) {
+            return months[month - 1];         
+    } else {
+            throw new MonthException("Incorrect month number");
     }
-    return months[month - 1];
-}
-try {
-    showMonthName(month);
     } catch (e) {
-        console.error(`${e.name}: ${e.message}`);
-        console.log(`${e.name} ${e.message}`);
-    } finally {
-        console.log("Function showMonthName was run");
+    if (e instanceof MonthException) {
+    console.error(`${e.name}: ${e.message}`);
+    return `${e.name}: ${e.message}, month: ${month}`;
     }
+    } finally {
+    console.log("Function showMonthName was run");
+    }
+}
 
-    console.log(showMonthName(month));
+console.log(showMonthName(month));
 
 //task 4.4
 const ids = [];
