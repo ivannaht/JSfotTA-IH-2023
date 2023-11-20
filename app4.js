@@ -21,3 +21,4 @@ console.log(result);
 } finally {
     console.log("Function calcRectangleArea was run");
 }
+
