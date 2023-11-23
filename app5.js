@@ -163,3 +163,61 @@ const allWorkers = [worker1, worker2, worker3, worker4, worker5, worker6, worker
 const listOfWorkers = new Workers(allWorkers);
 listOfWorkers.showAllWorkers();
 listOfWorkers.showSortedWorkers();
+
+// task 5.5
+class GeometricFigure {
+    getArea() {
+        return 0;
+    }
+    
+    toString() {
+        return Object.getPrototypeOf (this).constructor.name;
+    }
+}
+
+class Triangle extends GeometricFigure {
+    constructor(a, b, c) {
+        super();
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    getArea() {
+        let s = 0.5 * (this.a + this.b + this.c);
+        return Math.sqrt(s * (s - this.a) * (s - this.b) * (s - this.c));
+    }
+}
+
+class Square extends GeometricFigure {
+    constructor(a) {
+        super();
+        this.a = a;
+    }
+    getArea() {
+        return Math.pow(this.a, 2);
+    }
+}
+
+class Circle extends GeometricFigure {
+    constructor(r) {
+        super();
+        this.r = r;
+    }
+
+    getArea() {
+        return Math.PI * Math.pow(this.r, 2);
+    }
+}
+
+function handleFigures(figures) {
+    const eachFigure = figures.map((figure, index) => 
+    `Geometric figure ${index + 1}: ${figure.toString()} - area: ${figure.getArea().toFixed(2)}`);
+
+    let areas = figures.map((figure) => figure.getArea());
+    let totalArea = areas.reduce((total, area) => total += area);
+    return eachFigure.join("\n ") + `\n${totalArea.toFixed(2)} // total area`;    
+}
+
+const figures = [new Triangle(4, 5, 6), new Square(7), new Circle(5)]; 
+console.log(handleFigures(figures));
