@@ -42,7 +42,7 @@ class Person {
     }
 
     showFullName() {
-        return(`${this.firstNmae} ${this.lastName}`);
+        return `${this.firstNmae} ${this.lastName}`;
     }
 }
 
@@ -58,10 +58,9 @@ class Student extends Person {
     }
 
     showCourse() {
-        const currentDate = new Date()
+        const currentDate = new Date();
         const currentYear = currentDate.getFullYear();
-        let currentCourse =  currentYear - this.year;
-        return currentCourse;
+        return currentYear - this.year;
     }
 }
 
