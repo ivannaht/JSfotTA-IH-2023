@@ -64,7 +64,7 @@ class Student extends Person {
         const currentDate = new Date();
         const currentYear = currentDate.getFullYear();
         try {
-            if (this.year > currentYear - 6) {
+            if (this.year >= currentYear - 6) {
             return currentYear - this.year;
             } else {
             throw new RangeError("The year is not valid");
@@ -84,8 +84,14 @@ class Worker {
     #experience = 1.2;
 
     set experience(value) {
-        if (value <= 1) throw new Error("Experience must be greater than 1");
-        this.#experience = value;         
+        try {
+            if (value <= 1) {
+                throw new RangeError("Experience must be greater than 1");
+            } 
+            this.#experience = value;                   
+        } catch(e) {
+            console.error(`${e.name}: ${e.message}`);
+        }
     }
 
     get experience() {
@@ -202,6 +208,7 @@ class Square extends GeometricFigure {
         super();
         this.a = a;
     }
+    
     getArea() {
         return Math.pow(this.a, 2);
     }
