@@ -33,3 +33,38 @@ function showProps(obj) {
 }
 
 showProps(ukrainianNationalHolidays);
+
+// task 5.3
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    showFullName() {
+        return(`${this.firstNmae} ${this.lastName}`);
+    }
+}
+
+class Student extends Person {
+    constructor(firstName, lastName, year) {
+        super(firstName, lastName);
+        this.year = year;
+    }
+    
+    showFullName(middleName) {
+        this.middleName = middleName;
+        return `${this.firstName} ${this.middleName} ${this.lastName}`;
+    }
+
+    showCourse() {
+        const currentDate = new Date()
+        const currentYear = currentDate.getFullYear();
+        let currentCourse =  currentYear - this.year;
+        return currentCourse;
+    }
+}
+
+const stud1 = new Student("Anna", "Bojko", 2020);
+console.log(stud1.showFullName("Ivanivna"));
+console.log("Current course: " + stud1.showCourse());
