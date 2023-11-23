@@ -63,7 +63,15 @@ class Student extends Person {
     showCourse() {
         const currentDate = new Date();
         const currentYear = currentDate.getFullYear();
-        return currentYear - this.year;
+        try {
+            if (this.year > currentYear - 6) {
+            return currentYear - this.year;
+            } else {
+            throw new RangeError("The year is not valid");
+            }
+        } catch(e) {
+            console.error(`${e.name}: ${e.message}`);
+        }
     }
 }
 
