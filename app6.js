@@ -29,3 +29,18 @@ alert(`Output result: ${first.innerHTML}, ${fifth.innerHTML}, ${second.innerHTML
 const list2 = document.querySelectorAll("#list > li");
 alert(`Output result: ${list2[0].innerHTML}, ${list2[4].innerHTML}, ${list2[1].innerHTML}, ${list2[3].innerHTML}, ${list2[2].innerHTML}`);
 
+// task 6.5
+let headers = document.getElementsByTagName("h1");
+for (let key in headers) {headers[key].style = "background-color:rgb(100, 200, 100);";}
+let paragraphs = document.querySelectorAll("#myDiv > p");
+paragraphs[0].style = "font-weight:bold;";
+paragraphs[1].style = "color:red;";
+paragraphs[2].style = "text-decoration:underline;";
+paragraphs[3].style = "font-style:italic;";
+let list3 = document.querySelectorAll("#myList > li");
+let newText = "";
+list3.forEach(li => newText += li.innerHTML);
+document.querySelector("#myList").outerHTML = `<p style="margin-left: 40px;">${newText}</p>`;
+let span = document.getElementsByTagName("span")[0];
+span.hidden = true;
+
