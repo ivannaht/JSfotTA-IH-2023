@@ -10,3 +10,7 @@ document.querySelector("#test").innerHTML  = "Last";
 let petImage = document.getElementsByClassName("image")[0];
 petImage.src = "cat.jpg";
 alert(petImage.outerHTML);  
+
+// task 6.3
+let allElements = document.querySelectorAll("#text > p");
+allElements.forEach((element, index) => console.log(`Selector text ${index}: ${element.innerHTML}`));
