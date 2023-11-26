@@ -44,3 +44,12 @@ document.querySelector("#myList").outerHTML = `<p style="margin-left: 40px;">${n
 let span = document.getElementsByTagName("span")[0];
 span.hidden = true;
 
+// task 6.6
+let message1 = prompt("Please enter the first message");
+let message2 = prompt("Please enter the second message");
+let input1 = document.querySelector("#input1");
+let input2 = document.querySelector("#input2");
+input1.value = message1;
+input2.value = message2;
+input1.value = message2;
+input2.value = message1;
