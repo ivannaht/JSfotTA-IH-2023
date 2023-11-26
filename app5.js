@@ -147,7 +147,7 @@ class Workers {
     showSortedWorkers(){
         const sortedList = this.sort();
         console.log("Sorted salary:");
-        sortedList.forEach((worker) => console.log(`${worker.fullName}: ${worker.showSalaryWithExperience().toFixed(2)}`));
+        sortedList.forEach(worker => console.log(`${worker.fullName}: ${worker.showSalaryWithExperience().toFixed(2)}`));
     }
 }
 
@@ -229,7 +229,7 @@ function handleFigures(figures) {
     const eachFigure = figures.map((figure, index) => 
     `Geometric figure ${index + 1}: ${figure.toString()} - area: ${figure.getArea().toFixed(2)}`);
 
-    let areas = figures.map((figure) => figure.getArea());
+    let areas = figures.map(figure => figure.getArea());
     let totalArea = areas.reduce((total, area) => total += area);
     return eachFigure.join("\n ") + `\n${totalArea.toFixed(2)} // total area`;    
 }
