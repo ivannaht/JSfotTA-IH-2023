@@ -41,7 +41,7 @@ for (let i = 0; i <= 15; i++) {
 function createRandArray(k) {
 let randArray = [];
     for (let i = 0; i <= k; i++) {
-    randomInteger = Math.floor(Math.random() * 500) + 1;
+    let randomInteger = Math.floor(Math.random() * 500) + 1;
     randArray.push(randomInteger);
     }
     return randArray;

@@ -80,6 +80,8 @@ console.log(stud1.showFullName("Ivanivna"));
 console.log("Current course: " + stud1.showCourse());
 
 // task 5.4
+const allWorkers= [];
+
 class Worker {
     #experience = 1.2;
 
@@ -102,6 +104,7 @@ class Worker {
         this.fullName = fullName;
         this.dayRate = dayRate;
         this.workingDays = workingDays;
+        allWorkers.push(this);
     }
 
     showSalary() {
@@ -172,8 +175,9 @@ let worker6 = new Worker("Andy Carson", 27, 19);
 worker6.experience = 1.1;
 let worker7 = new Worker("Jenna Palmer", 20, 20);
 worker7.experience = 1.3;
+let worker8 = new Worker("Anna Fisher", 25, 25);
+worker8.experience = 1.5;
 
-const allWorkers = [worker1, worker2, worker3, worker4, worker5, worker6, worker7];
 const listOfWorkers = new Workers(allWorkers);
 listOfWorkers.showAllWorkers();
 listOfWorkers.showSortedWorkers();
