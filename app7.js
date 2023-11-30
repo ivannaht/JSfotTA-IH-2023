@@ -4,9 +4,25 @@ console.log("Home Work 7");
 // task 7.1
 let newWindow = window.open("", "", "width=300,height=300");
 
-setTimeout(() => newWindow.resizeTo(500, 500), 2000);
+function windowManipulations(newWindow) {    
+    setTimeout(() => {
+        setTimeout (() => {
+            setTimeout (() => {
+                newWindow.close();
+                console.log("close"); 
+            }, 2000);     
+            newWindow.moveTo(200, 200); 
+            console.log("move"); 
+        }, 2000);
+        newWindow.resizeTo(500, 500);
+        console.log("resize");   
+    }, 2000);
+}
 
-setTimeout(() => newWindow.moveTo(200, 200), 2000);
+windowManipulations(newWindow);
 
-setTimeout(() => newWindow.close(), 2000);
-
+// task 7.2
+function changeCSS() {
+    let styledText = document.querySelector("#text-7-2");
+    styledText.style.color = "orange";
+}
