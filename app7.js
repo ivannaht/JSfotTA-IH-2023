@@ -25,4 +25,6 @@ windowManipulations(newWindow);
 function changeCSS() {
     let styledText = document.querySelector("#text-7-2");
     styledText.style.color = "orange";
+    styledText.style.fontSize = "20px";
+    styledText.style.fontFamily = 'Comic Sans MS';
 }
