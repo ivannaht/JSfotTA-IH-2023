@@ -48,12 +48,12 @@ link.onmouseout = changeBackgroundColor("white");
 
 // task 7.4
 function deleteSelectedOption() {
-    let dropdownForm = document.getElementById("dropdownForm");
-    var dropdown = document.querySelector("#dropdown-7-4");   
+    let dropdownForm = document.querySelector("#dropdownForm");
+    let dropdown = document.querySelector("#dropdown-7-4");   
 
     dropdownForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        var options = document.querySelectorAll("#dropdown-7-4 > option");        
+        let options = document.querySelectorAll("#dropdown-7-4 > option");        
         console.log(`You had ${[...options].length - 1} friends`);        
         for (let option of options) {
             if (option.selected){                
@@ -68,3 +68,26 @@ function deleteSelectedOption() {
 }  
 
 deleteSelectedOption();
+
+// task 7.5
+let buttonSection = document.querySelector("#task-7-5");
+let buttonLive = document.querySelector("#btn-7-5");
+
+const displayEvent = (e) => {
+    var message;
+    switch(e.type) {
+        case "mousedown": 
+            message = "I was pressed!";
+            break;
+        case "mouseover":
+             message = "Mouse on me!";
+             break;
+        case "mouseout":
+             message = "Mouse is not on me!";
+             break;
+    }     
+console.log(message);
+}
+
+const events = ["mousedown", "mouseover", "mouseout"];
+events.forEach(event => buttonLive.addEventListener(event, displayEvent));
