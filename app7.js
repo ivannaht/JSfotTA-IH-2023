@@ -72,21 +72,25 @@ deleteSelectedOption();
 // task 7.5
 let buttonSection = document.querySelector("#task-7-5");
 let buttonLive = document.querySelector("#btn-7-5");
+let currentP = document.querySelector("#text-7-5");
 
 const displayEvent = (e) => {
     var message;
     switch(e.type) {
         case "mousedown": 
-            message = "I was pressed!";
+            message = "I was pressed!";            
             break;
         case "mouseover":
-             message = "Mouse on me!";
-             break;
+            message = "Mouse on me!";
+            break;
         case "mouseout":
-             message = "Mouse is not on me!";
-             break;
-    }     
-console.log(message);
+            message = "Mouse is not on me!";
+            break;
+    } 
+const newP = document.createElement("p");
+const newContent = document.createTextNode(message);
+newP.appendChild(newContent);
+buttonSection.insertBefore(newP, currentP);
 }
 
 const events = ["mousedown", "mouseover", "mouseout"];
