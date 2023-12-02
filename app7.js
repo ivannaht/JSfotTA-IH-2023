@@ -29,7 +29,6 @@ function changeCSS() {
     styledText.style.fontFamily = 'Comic Sans MS';
 }
 
-
 // task 7.3
 let button1 = document.querySelector("#task-7-3-1");
 let button2 = document.querySelector("#task-7-3-2");
@@ -46,3 +45,10 @@ button3.onmousedown = changeBackgroundColor("brown");
 button3.onmouseup = changeBackgroundColor("white");
 link.onmouseover = changeBackgroundColor("yellow");
 link.onmouseout = changeBackgroundColor("white");
+
+// task 7.4
+function deleteSelectedItem(item) {
+    return () => {
+        
+    };   
+}
