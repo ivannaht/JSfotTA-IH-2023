@@ -47,8 +47,24 @@ link.onmouseover = changeBackgroundColor("yellow");
 link.onmouseout = changeBackgroundColor("white");
 
 // task 7.4
-function deleteSelectedItem(item) {
-    return () => {
-        
-    };   
-}
+function deleteSelectedOption() {
+    let dropdownForm = document.getElementById("dropdownForm");
+    var dropdown = document.querySelector("#dropdown-7-4");   
+
+    dropdownForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        var options = document.querySelectorAll("#dropdown-7-4 > option");        
+        console.log(`You had ${[...options].length - 1} friends`);        
+        for (let option of options) {
+            if (option.selected){                
+                if (option.value !== "") {                    
+                    option.remove();
+                    dropdown.selectedIndex = 0;
+                    console.log(`${option.textContent} is chosen and deleted`);                    
+                }
+            }
+        }     
+    });
+}  
+
+deleteSelectedOption();
