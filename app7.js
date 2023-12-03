@@ -97,10 +97,10 @@ const events = ["mousedown", "mouseover", "mouseout"];
 events.forEach(event => buttonLive.addEventListener(event, displayEvent));
 
 // task 7.6
-let windowInfo = document.querySelector("#text-7-6");
-const windowEvent = (e) => {
-    if (e.typy === "resize") 
+let windowInfo = document.querySelector("#text-7-6-2");
+const windowEvent = (e) => {    
+    if (e.type === "resize") 
         windowInfo.innerHTML = `Width: ${window.innerWidth}, Height: ${window.innerHeight}`;
 }
 
-windowInfo.addEventListener("resize", windowEvent);
+window.addEventListener("resize", windowEvent);
