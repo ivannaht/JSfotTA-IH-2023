@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .form {
+    display: flex;
+    }
+
+    .row {
+    display: flex;
+    }
+
+    .col {
+    flex: 25%;
+    padding: 10px;
+    margin: 10px;
+    border: 10px;
+    }
+    </style>
     <title>JS 2023</title>
+
 </head>
 <body>
     <!-- task 1.1 -->
@@ -71,7 +88,7 @@
     <br>
     <div id="task-7-4">
         <form action="" id="dropdownForm">
-            <label for="friends">Friends:</label><br>
+            <label for="friends">Friends</label><br>
             <select id="dropdown-7-4">
                 <option value="">Please select a friend</option>
                 <option value="peter">Peter</option>
@@ -93,6 +110,27 @@
         <p id="text-7-6-1"><b>Window info:</b></p>
         <p id="text-7-6-2"></p>
     </div>
+    <form id="form-7-7" class="form">
+        <div id="task-7-7" class="row">
+            <div id="task-7-7-1" class="col">
+                <label for="country">Countries</label><br>
+                <select name="country" id="country">
+                    <option value="">Please select country</option>
+                    <option value="gen">Germany</option>
+                    <option value="usa">USA</option>
+                    <option value="ukr">Ukraine</option>
+                </select>
+            </div>
+            <div id="task-7-7-2" class="col">
+                <label for="cities">Cities</label><br>
+                <select name="cities" id="cities">
+                    <option value="">Please select city</option>
+                </select>
+            </div>
+        </div>
+        <p id="text-7-7"></p>        
+    </form>   
+    <br>
     <script src="app7.js"></script>    
 </body>
 </html>

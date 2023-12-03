@@ -104,3 +104,6 @@ const windowEvent = (e) => {
 }
 
 window.addEventListener("resize", windowEvent);
+
+// task 7.7
+
