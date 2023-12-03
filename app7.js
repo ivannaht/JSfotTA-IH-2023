@@ -106,4 +106,67 @@ const windowEvent = (e) => {
 window.addEventListener("resize", windowEvent);
 
 // task 7.7
+const locations = {
+Gernamy: ["Berlin", "Stuttgart", "Munich", "Hamburg", "Cologne", "Frankfurt"],
+USA: ["New York City", "Los Angeles", "Chicago", "Houston", "Phoenix", "Dallas"], 
+Ukraine: ["Kyiv", "Kharkiv", "Dnipro", "Lviv", "Mykolaiv", "Vinnytsia"]
+};
 
+
+function selectCountryCity() {
+    let locationForm = document.querySelector("#form-7-7");
+    let countryDropdown = document.querySelector("#country");
+    let cityDropdown = document.querySelector("#cities");
+    let locationSection = document.querySelector("#task-7-7-row-2");
+    let currentP = document.querySelector("#text-7-7");
+
+
+    const addCities =  (e) => {
+        e.preventDefault();
+        currentP.textContent = "";
+    if (e.target === countryDropdown) {
+        if (e.target.selectedIndex === 1 ) {
+            citiesList = locations.Gernamy;
+        }  else if (e.target.selectedIndex === 2 ) {
+            citiesList = locations.USA;
+        }  else if (e.target.selectedIndex === 3 ) {
+            citiesList = locations.Ukraine;
+        }    
+        
+        console.log(e.target.selectedIndex);
+        console.log(e.target.textContent);
+        
+        for (city of citiesList) {
+        let newOption = document.createElement("option");
+        console.log(newOption);
+        newOption.value = city.toLowerCase();
+        newOption.textContent = city;
+        cityDropdown.appendChild(newOption);
+        }
+    }
+    }
+    
+    const addLocationText = (e) => {
+        e.preventDefault();
+    if (e.target === cityDropdown) {
+        console.log(e.target.selectedIndex);
+        console.log(e.target.textContent);
+    let newCity = cityDropdown.selectedIndex;
+    let newText = document.createTextNode(`${e.target.selectedIndex}, ${newCity}`);
+    let newP = document.createElement("p");
+    newP.appendChild(newText);
+    locationSection.appendChild(newP);
+    // locationSection.insertBefore(newP, currentP);
+    // locationForm.removeEventListener("change", addCities);    
+    }    
+}
+locationForm.addEventListener("change", addCities);
+locationForm.addEventListener("change", addLocationText);
+// locationForm.removeEventListener("change", addLocationText, true);   
+
+
+// locationForm.removeEventListener("change", addLocationText);
+}
+
+
+selectCountryCity();
