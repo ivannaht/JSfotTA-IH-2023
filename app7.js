@@ -118,54 +118,41 @@ function selectCountryCity() {
     let countryDropdown = document.querySelector("#country");
     let cityDropdown = document.querySelector("#cities");
     let locationSection = document.querySelector("#task-7-7-row-2");
-    let currentP = document.querySelector("#text-7-7");
-
 
     const addCities =  (e) => {
         e.preventDefault();
-        currentP.textContent = "";
-    if (e.target === countryDropdown) {
-        if (e.target.selectedIndex === 1 ) {
-            citiesList = locations.Gernamy;
-        }  else if (e.target.selectedIndex === 2 ) {
-            citiesList = locations.USA;
-        }  else if (e.target.selectedIndex === 3 ) {
-            citiesList = locations.Ukraine;
-        }    
-        
-        console.log(e.target.selectedIndex);
-        console.log(e.target.textContent);
-        
-        for (city of citiesList) {
-        let newOption = document.createElement("option");
-        console.log(newOption);
-        newOption.value = city.toLowerCase();
-        newOption.textContent = city;
-        cityDropdown.appendChild(newOption);
+        if (e.target === countryDropdown) {
+            locationSection.innerHTML = "<p></p>";
+            cityDropdown.innerHTML = `<option value="">Please select city</option>`;
+            if (e.target.selectedIndex === 1 ) {
+                citiesList = locations.Gernamy;
+            }  else if (e.target.selectedIndex === 2 ) {
+                citiesList = locations.USA;
+            }  else if (e.target.selectedIndex === 3 ) {
+                citiesList = locations.Ukraine;
+            }    
+
+            for (city of citiesList) {        
+            let newOption = document.createElement("option");
+            newOption.value = city.toLowerCase();
+            newOption.textContent = city;
+            cityDropdown.appendChild(newOption);
+            }
         }
-    }
     }
     
     const addLocationText = (e) => {
         e.preventDefault();
-    if (e.target === cityDropdown) {
-        console.log(e.target.selectedIndex);
-        console.log(e.target.textContent);
-    let newCity = cityDropdown.selectedIndex;
-    let newText = document.createTextNode(`${e.target.selectedIndex}, ${newCity}`);
-    let newP = document.createElement("p");
-    newP.appendChild(newText);
-    locationSection.appendChild(newP);
-    // locationSection.insertBefore(newP, currentP);
-    // locationForm.removeEventListener("change", addCities);    
-    }    
-}
-locationForm.addEventListener("change", addCities);
-locationForm.addEventListener("change", addLocationText);
-// locationForm.removeEventListener("change", addLocationText, true);   
-
-
-// locationForm.removeEventListener("change", addLocationText);
+        if (e.target === cityDropdown) {      
+        let newCity = cityDropdown.selectedIndex;
+        let newText = document.createTextNode(`${countryDropdown.selectedIndex}, ${cityDropdown.selectedIndex}`);
+        let newP = document.createElement("p");
+        newP.appendChild(newText);
+        locationSection.appendChild(newP);  
+        }    
+    }
+    locationForm.addEventListener("change", addCities);
+    locationForm.addEventListener("change", addLocationText);
 }
 
 
