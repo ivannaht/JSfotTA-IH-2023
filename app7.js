@@ -157,5 +157,4 @@ function selectCountryCity() {
     locationForm.addEventListener("change", addLocationText);
 }
 
-
 selectCountryCity();
