@@ -112,7 +112,6 @@ USA: ["New York City", "Los Angeles", "Chicago", "Houston", "Phoenix", "Dallas"]
 Ukraine: ["Kyiv", "Kharkiv", "Dnipro", "Lviv", "Mykolaiv", "Vinnytsia"]
 };
 
-
 function selectCountryCity() {
     let locationForm = document.querySelector("#form-7-7");
     let countryDropdown = document.querySelector("#country");
@@ -143,12 +142,15 @@ function selectCountryCity() {
     
     const addLocationText = (e) => {
         e.preventDefault();
-        if (e.target === cityDropdown) {      
-        let newCity = cityDropdown.selectedIndex;
-        let newText = document.createTextNode(`${countryDropdown.selectedIndex}, ${cityDropdown.selectedIndex}`);
-        let newP = document.createElement("p");
-        newP.appendChild(newText);
-        locationSection.appendChild(newP);  
+        if (e.target === cityDropdown) {
+            let selectedCountryIndex = countryDropdown.selectedIndex - 1;
+            let selectedCountry = Object.keys(locations)[selectedCountryIndex];
+            let selectedCityIndex = cityDropdown.selectedIndex - 1;
+            let selectedCity =  Object.values(locations)[selectedCountryIndex][selectedCityIndex];
+            let newText = document.createTextNode(`${selectedCountry}, ${selectedCity}`);
+            let newP = document.createElement("p");
+            newP.appendChild(newText);
+            locationSection.appendChild(newP);  
         }    
     }
     locationForm.addEventListener("change", addCities);
