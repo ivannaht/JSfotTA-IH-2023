@@ -36,3 +36,28 @@ return result;
 
 console.log(mul(1, "str", 2, 3, true));
 console.log(mul(null , "str", false , true));
+
+// task 8.4
+let server = {
+    data: 0,
+    convertToString: function(callback) {
+        callback(() => `${this.data}`);
+    }    
+};
+    
+let client = {
+    server: server,
+    result: "",
+    calc: function(data) {
+        this.server.data = data;
+        this.server.convertToString(this.notification());
+    },
+    notification: function() {
+        return callback => {this.result = callback()};    
+    }
+}
+
+    
+client.calc(123);
+console.log(client.result);
+console.log(typeof client.result);
