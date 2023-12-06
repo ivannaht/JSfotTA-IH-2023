@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .form {
+    display: flex;
+    margin: 10px;
+    }
+
+    .row {
+    display: flex;
+    margin: 10px;
+    }
+
+    .col {
+    flex: 25%;
+    padding: 10px;
+    margin: 10px;
+    border: 10px;
+    }
+    </style>
     <title>JS 2023</title>
 </head>
 <body>
@@ -56,6 +74,66 @@
     <span>Make me invisible, please!</span>
     <input type="text" id="input1" value="Text1">
     <input type="text" id="input2" value="Text2">
-    <script src="app6.js"></script>   
+    <script src="app6.js"></script>
+    <p id="text-7-2">I lear JavaScript events!</p>
+        <div>
+            <button type="button" onclick="changeCSS()" id="style-btn">Change style!</button>
+        </div>
+    <br>
+    <div id="task-7-3">
+        <button  type="button" id="task-7-3-1">Click to make the page blue.</button>
+        <button  type="button" id="task-7-3-2">Click to make the page pink.</button>
+        <button  type="button" id="task-7-3-3">Click to make the page brown.</button>
+        <a href="url-7-3" target="_blank">Hover over to make page yellow</a>
+    </div>
+    <br>
+    <div id="task-7-4">
+        <form action="" id="dropdownForm">
+            <label for="friends">Friends</label><br>
+            <select id="dropdown-7-4">
+                <option value="">Please select a friend</option>
+                <option value="peter">Peter</option>
+                <option value="john">John</option>
+                <option value="alise">Alise</option>
+                <option value="alex">Alex</option>
+                <option value="iren">Iren</option>
+            </select>
+            <button type="submit" id="button-7-4">Choose and Delete</button><br><br>
+        </form>
+    </div>
+    <br>
+    <div id="task-7-5">
+        <button type="button" id="btn-7-5">Live button!</button>
+        <p id="text-7-5"></p>        
+    </div>
+    <br>
+    <div id="task-7-6">
+        <p id="text-7-6-1"><b>Window info:</b></p>
+        <p id="text-7-6-2"></p>
+    </div>
+    <form id="form-7-7" class="form">
+        <div id="task-7-7-row-1" class="row">
+            <div id="task-7-7-1" class="col">
+                <label for="country">Countries</label><br>
+                <select name="country" id="country">
+                    <option value="">Please select country</option>
+                    <option value="gen">Germany</option>
+                    <option value="usa">USA</option>
+                    <option value="ukr">Ukraine</option>
+                </select>
+            </div>
+            <div id="task-7-7-2" class="col">
+                <label for="cities">Cities</label><br>
+                <select name="cities" id="cities">
+                    <option value="" >Please select city</option>
+                </select>
+            </div>
+        </div>
+        <div id="task-7-7-row-2" class="row">
+            <p></p>
+        </div>                
+    </form>   
+    <br>
+    <script src="app7.js"></script>    
 </body>
 </html>
