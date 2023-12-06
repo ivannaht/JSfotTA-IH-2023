@@ -19,3 +19,21 @@ console.log(name2);
 console.log(age2);
 console.log(name4);
 console.log(age4);
+
+// task 8.3
+function mul() {
+    let numbers = 0;   
+    let result = Object.values(arguments).reduce((prod, arg) => {        
+        if (typeof arg === "number") {
+            numbers++;
+            return prod * arg;
+        } else
+            return prod;
+    }, 1);
+    if (numbers === 0)
+        result = 0;
+return result;
+}
+
+console.log(mul(1, "str", 2, 3, true));
+console.log(mul(null , "str", false , true));
