@@ -28,13 +28,25 @@ calcArrProduct ([5, "user2", 7, 12]).then(result => console.log(result));
 
 // task 9.3
 const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
-async function showNumbers() {
-    const N = 5;
+const N = 5;
+
+function showNumbers() {
+    for (let i = 0, p = Promise.resolve(); i <= 10; i++) {
+        let time = Math.floor(Math.random() * N * 1000);
+        p = p.then(() => delay(i, time))
+            .then(() => console.log(`time: ${time}, i: ${i}`));                  
+    }        
+}   
+
+showNumbers();
+
+// task 9.4
+async function showNumbersAwait() {
 	for (let i = 0; i <= 10; i++) {
-        time = Math.floor(Math.random() * N * 1000); 
+        let time = Math.floor(Math.random() * N * 1000); 
         let result = await delay(i, time);
         console.log(`time: ${time}, i: ${result}`);                  
     }
 }
 
-showNumbers();
+showNumbersAwait();
