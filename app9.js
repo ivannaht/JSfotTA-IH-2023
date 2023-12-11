@@ -10,21 +10,21 @@ getPromise("test promise", 2000).then((data) => console.log(data));
 
 // task 9.2
 function calcArrProduct(arr) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         let result = 1;
         for (let a of arr) {  
-            if (typeof a !== "number") {
-                result = "Error! Incorrect array!";
-                break;                  
-            }
-            result *= a;            
+            if (typeof a === "number") {
+                result *= a;                
+            } else {
+                reject("Error! Incorrect array!");
+            }                      
         }
         resolve(result);
     });
 }
 
 calcArrProduct([3, 4, 5]).then(result => console.log(result));
-calcArrProduct ([5, "user2", 7, 12]).then(result => console.log(result));
+calcArrProduct([5, "user2", 7, 12]).then(result => console.log(result)).catch(error => console.log(error)) ;
 
 // task 9.3
 const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
