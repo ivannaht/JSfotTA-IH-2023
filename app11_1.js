@@ -1,5 +1,5 @@
 function updateVoteButton() {
-    const url = "http://127.0.0.1:5500/page11_1.html";
+    const url = "http://127.0.0.1:5500/page11-1.html";
     fetch(url)
     .then((response) => {
         if (!response.ok) 
