@@ -12,7 +12,16 @@ async function downloadBooks(e) {
     if (!response.ok) 
         throw new Error(`HTTP error: ${response.status}`);          
     console.log(response);
-    books.forEach(book => document.write(`<ul><li>${book.author}</li></ul>`));
+    document.write(`<ul id="list"></ul`);
+    const list = document.querySelector("#list");
+    let newContent;
+    let newLi;
+    books.forEach(book => {    
+        newContent = document.createTextNode(`${book.author}`);
+        newLi = document.createElement("li");
+        newLi.appendChild(newContent);
+        list.appendChild(newLi);    
+    });
 }
 
 downloadButton.addEventListener("mousedown", (e) => downloadBooks(e));
