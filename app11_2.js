@@ -9,7 +9,8 @@ const books = [
 async function downloadBooks(e) {
     const url = "http://127.0.0.1:5500/page11-2.html";
     let response = await fetch(url);
-    let data = await response;
+    if (!response.ok) 
+        throw new Error(`HTTP error: ${response.status}`);          
     console.log(response);
     books.forEach(book => document.write(`<ul><li>${book.author}</li></ul>`));
 }
