@@ -85,7 +85,7 @@ console.log(swapPlaces("JS! 100%"));
 
 // task 12.5
 function validateCard(cardNumber) {
-    regExp = /(\d{4})-(\d{4})-(\d{4})-(\d{4})/;
+    regExp = /\d{4}-\d{4}-\d{4}-\d{4}/;
     if (regExp.test(cardNumber)) {
         return `Card number ${cardNumber} is correct`;
     } else {
