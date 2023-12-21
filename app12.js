@@ -81,3 +81,16 @@ function swapPlaces(phrase) {
 console.log(swapPlaces("Java Script"));
 console.log(swapPlaces("   Java    Script  "));
 console.log(swapPlaces("JS! 100%"));
+
+// task 12.5
+function validateCard(cardNumber) {
+    regExp = /(\d{4})\-(\d{4})\-(\d{4})\-(\d{4})/;
+    if (regExp.test(cardNumber)) {
+        return `${cardNumber} is correct`;
+    } else {
+        return `${cardNumber} is not correct`;
+    } 
+}
+
+console.log(validateCard("9999-9999-9999-9999"));
+console.log(validateCard("9999-"));
