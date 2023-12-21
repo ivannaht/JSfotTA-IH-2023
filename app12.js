@@ -49,9 +49,9 @@ console.log(checkEmail("q@-.cc")); // false
 
 // task 12.3
 /* in this task the regular expression finds:
-- one letter d in the text (required)
-- letters b or B after first d (optional)
-- the second d after b or B (optional)*/
+- one letter d or D at the begginig (required)
+- none or any letters b or B after first d or D (optional)
+- none or one d or D after b or B at the end (optional) */
 function findLetter(phrase) {
     regExp = /^db*(bd)?$/ig;
     const result = new Set();
@@ -71,3 +71,13 @@ function findLetter(phrase) {
 console.log(findLetter("cdbBdbsbz")); // ['d', 'db', 'dbB', 'dbBd']
 console.log(findLetter("dddiiiidbdbdBBdbDjjjjdBbddbbDbBbd")); // ['d', 'db', 'dbd', 'dB', 'dBB', 'dBBd', 'dbD', 'D', 'dBb', 'dBbd', 'dbb', 'dbbD', 'Db', 'DbB', 'DbBb', 'DbBbd']
 console.log(findLetter("bbbDbbBbbbDDdbBid")); // ['D', 'Db', 'Dbb', 'DbbB', 'DbbBb', 'DbbBbb', 'DbbBbbb', 'DbbBbbbD', 'd', 'db', 'dbB']
+
+// task 12.4
+function swapPlaces(phrase) {
+    regExp = /(\S+)\s+(\S+)/;
+    return phrase.replace(regExp, `$2, $1`);
+}
+
+console.log(swapPlaces("Java Script"));
+console.log(swapPlaces("   Java    Script  "));
+console.log(swapPlaces("JS! 100%"));
