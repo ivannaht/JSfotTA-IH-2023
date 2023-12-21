@@ -28,24 +28,25 @@ Acceptable email domain formats:
 */
 
 function checkEmail(email) {
-    regExp = /^[a-zA-Z]+([-.]|\w)*@\w{2,}\.(com|org|net|gov|cc)$/;
+    regExp = /^[a-zA-Z]+\w*[.-]?\w+@\w{2,}\.(com|org|net|gov|cc)$/;
     return regExp.test(email)
 }
 
 console.log(checkEmail("Qmail2@gmail.com")); // true
 console.log(checkEmail("Qm@gmail.com")); // true
 console.log(checkEmail("Qm@2_lll.com")); // true
-console.log(checkEmail("Q-hjh.7j@gmail.com")); // true
+console.log(checkEmail("Qh2jh.7j@gmail.com")); // true
 console.log(checkEmail("Q2@g8.gov")); // true
-console.log(checkEmail("q_@2f.cc")); // true
-console.log(checkEmail("q-@2f.cc")); // true
-console.log(checkEmail("q.@2f.cc")); // true
+console.log(checkEmail("q_j2@2f.cc")); // true
+console.log(checkEmail("q-j2@2f.cc")); // true
+console.log(checkEmail("q.j2@2f.cc")); // true
 console.log(checkEmail("@2@g.com")); // false
 console.log(checkEmail("Qmail2gmail.com")); // false
 console.log(checkEmail("Qmail2@gmailcom")); // false
 console.log(checkEmail("Qmail2@gmail.c")); // false
-console.log(checkEmail("_q@2.cc")); // false
+console.log(checkEmail("_jq@2.cc")); // false
 console.log(checkEmail("q@-.cc")); // false
+console.log(checkEmail("q.-j@ddd.com")); // false
 
 // task 12.3
 /* in this task the regular expression finds:
@@ -84,7 +85,7 @@ console.log(swapPlaces("JS! 100%"));
 
 // task 12.5
 function validateCard(cardNumber) {
-    regExp = /(\d{4})\-(\d{4})\-(\d{4})\-(\d{4})/;
+    regExp = /(\d{4})-(\d{4})-(\d{4})-(\d{4})/;
     if (regExp.test(cardNumber)) {
         return `${cardNumber} is correct`;
     } else {
@@ -93,4 +94,34 @@ function validateCard(cardNumber) {
 }
 
 console.log(validateCard("9999-9999-9999-9999"));
+console.log(validateCard("9-9-9-9"));
 console.log(validateCard("9999-"));
+console.log(validateCard("9999"));
+console.log(validateCard("---"));
+
+// task 12.6
+/* Requirements :
+- Numbers (0-9).
+- Only Latin letters in uppercase (A-Z) and lowercase (a-z) cases.
+- Only “_” and “-” symbols are allowed in the email body . But they cannot be the 1st character of an email.
+- The symbol “-” cannot be repeated. */
+
+function validateEmail(email) {
+regExp = /^\w[^_]\w*[-]?\w+@\w{2,}\.com$/;
+    if (regExp.test(email)) {
+        return `${email} Email is correct`;
+    } else {
+        return `${email} Email is not correct`;
+    } 
+}
+
+console.log(validateEmail("my_mail@gmail.com")); // Email is correct
+console.log(validateEmail("#my_mail@gmail.com")); // Email is correct
+console.log(validateEmail("my_ma--il@gmail.com")); // Email is correct
+console.log(validateEmail("my_ma-il@gmail.com")); // Email is correct
+console.log(validateEmail("8n-_@gmail.com")); // Email is correct
+console.log(validateEmail("8n__@gmail.com")); // Email is correct
+console.log(validateEmail("-8n-_@gmail.com")); // Email is not correct
+console.log(validateEmail("_8n-_@gmail.com")); // Email is not correct
+console.log(validateEmail("8n--@gmail.com")); // Email is not correct
+console.log(validateEmail("8n-*@gmail.com")); // Email is not correct
