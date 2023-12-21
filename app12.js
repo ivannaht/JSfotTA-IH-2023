@@ -125,3 +125,20 @@ console.log(validateEmail("-8n-_@gmail.com")); // Email is not correct
 console.log(validateEmail("_8n-_@gmail.com")); // Email is not correct
 console.log(validateEmail("8n--@gmail.com")); // Email is not correct
 console.log(validateEmail("8n-*@gmail.com")); // Email is not correct
+
+// task 12.7
+function checkLogin(login) {
+    // regExp = /[a-zA-Z]{1}\S*{1,9}[a-zA-Z\d\.]/;
+    regExp = /^[a-zA-Z]{1}[a-zA-Z0-9.]{1,9}$/;
+    regNum = /\d+(\.\d+)?/g;    
+        return `${regExp.test(login)} ${login.match(regNum)}`
+}
+
+console.log(checkLogin("ee1.1ret3t")); // true 1.1,3
+console.log(checkLogin("A234567890")); // true 234567890
+console.log(checkLogin("a2")); // true 2
+console.log(checkLogin("ee1*1ret3")); // false 1,1,3
+console.log(checkLogin("ee1+1ret3")); // ffalse 1,1,3
+console.log(checkLogin("123456789a")); // false 123456789
+console.log(checkLogin("a_")); // false null
+console.log(checkLogin("ee1.1ret3tee1.1ret3tee1.1ret3tee1.1ret3t")); // false 1.1,3,1.1,3,1.1,3,1.1,3
