@@ -87,9 +87,9 @@ console.log(swapPlaces("JS! 100%"));
 function validateCard(cardNumber) {
     regExp = /(\d{4})-(\d{4})-(\d{4})-(\d{4})/;
     if (regExp.test(cardNumber)) {
-        return `${cardNumber} is correct`;
+        return `Card number ${cardNumber} is correct`;
     } else {
-        return `${cardNumber} is not correct`;
+        return `Card number ${cardNumber} is not correct`;
     } 
 }
 
@@ -107,7 +107,7 @@ console.log(validateCard("---"));
 - The symbol “-” cannot be repeated. */
 
 function validateEmail(email) {
-regExp = /^\w[^_]\w*[-]?\w+@\w{2,}\.com$/;
+regExp = /^[a-zA-Z]+\d*\w*[-]?\w+@\w{2,}\.com$/;
     if (regExp.test(email)) {
         return `${email} Email is correct`;
     } else {
@@ -116,8 +116,8 @@ regExp = /^\w[^_]\w*[-]?\w+@\w{2,}\.com$/;
 }
 
 console.log(validateEmail("my_mail@gmail.com")); // Email is correct
-console.log(validateEmail("#my_mail@gmail.com")); // Email is correct
-console.log(validateEmail("my_ma--il@gmail.com")); // Email is correct
+console.log(validateEmail("#my_mail@gmail.com")); // Email is not correct
+console.log(validateEmail("my_ma--il@gmail.com")); // Email is not correct
 console.log(validateEmail("my_ma-il@gmail.com")); // Email is correct
 console.log(validateEmail("8n-_@gmail.com")); // Email is correct
 console.log(validateEmail("8n__@gmail.com")); // Email is correct
