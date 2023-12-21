@@ -107,7 +107,7 @@ console.log(validateCard("---"));
 - The symbol “-” cannot be repeated. */
 
 function validateEmail(email) {
-regExp = /^[a-zA-Z]+\d*\w*[-]?\w+@\w{2,}\.com$/;
+regExp = /^[a-zA-Z]+\w*[-]?\w+@\w{2,}\.com$/;
     if (regExp.test(email)) {
         return `${email} Email is correct`;
     } else {
