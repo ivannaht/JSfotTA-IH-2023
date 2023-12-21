@@ -35,7 +35,7 @@ function checkEmail(email) {
 console.log(checkEmail("Qmail2@gmail.com")); // true
 console.log(checkEmail("Qm@gmail.com")); // true
 console.log(checkEmail("Qm@2_lll.com")); // true
-console.log(checkEmail("Q-hjh.j@gmail.com")); // true
+console.log(checkEmail("Q-hjh.7j@gmail.com")); // true
 console.log(checkEmail("Q2@g8.gov")); // true
 console.log(checkEmail("q_@2f.cc")); // true
 console.log(checkEmail("q-@2f.cc")); // true
@@ -46,3 +46,28 @@ console.log(checkEmail("Qmail2@gmailcom")); // false
 console.log(checkEmail("Qmail2@gmail.c")); // false
 console.log(checkEmail("_q@2.cc")); // false
 console.log(checkEmail("q@-.cc")); // false
+
+// task 12.3
+/* in this task the regular expression finds:
+- one letter d in the text (required)
+- letters b or B after first d (optional)
+- the second d after b or B (optional)*/
+function findLetter(phrase) {
+    regExp = /^db*(bd)?$/ig;
+    const result = new Set();
+    let word;
+    let i = 0;
+    while (i < phrase.length) {
+        for (let k=0; k <= phrase.length; k++) {
+        word = phrase.slice(i, i + k).match(regExp);
+            if (word !== null) 
+                result.add(word.toString());            
+        }
+        i++;
+    }
+    return [...result];
+}
+
+console.log(findLetter("cdbBdbsbz")); // ['d', 'db', 'dbB', 'dbBd']
+console.log(findLetter("dddiiiidbdbdBBdbDjjjjdBbddbbDbBbd")); // ['d', 'db', 'dbd', 'dB', 'dBB', 'dBBd', 'dbD', 'D', 'dBb', 'dBbd', 'dbb', 'dbbD', 'Db', 'DbB', 'DbBb', 'DbBbd']
+console.log(findLetter("bbbDbbBbbbDDdbBid")); // ['D', 'Db', 'Dbb', 'DbbB', 'DbbBb', 'DbbBbb', 'DbbBbbb', 'DbbBbbbD', 'd', 'db', 'dbB']
