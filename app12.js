@@ -75,12 +75,12 @@ console.log(findLetter("bbbDbbBbbbDDdbBid")); // ['D', 'Db', 'Dbb', 'DbbB', 'Dbb
 
 // task 12.4
 function swapPlaces(phrase) {
-    regExp = /(\S+)\s+(\S+)/;
-    return phrase.replace(regExp, `$2, $1`);
+    regExp = /(\s*)(\S+)(\s+)(\S+)(\s*)/;
+    return phrase.replace(regExp, `$4, $2`);
 }
 
 console.log(swapPlaces("Java Script"));
-console.log(swapPlaces("   Java    Script  "));
+console.log(swapPlaces("   Java    Script   "));
 console.log(swapPlaces("JS! 100%"));
 
 // task 12.5
